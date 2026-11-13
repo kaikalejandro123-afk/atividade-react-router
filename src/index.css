@@ -1,8 +1,9 @@
-
 :root {
   font-family: Arial, sans-serif;
-  color: #e2e8f0;
-  background-color: #0f172a;
+  color: #e7e4f2;
+  background: #0e0e17;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
 }
 
 * {
@@ -10,47 +11,120 @@
 }
 
 body {
-  margin: 0;
   min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #0e0e17;
 }
 
-#root {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 24px;
-}
-
-nav {
-  background-color: #1e293b;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-nav a {
-  color: #ffffff;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: #60a5fa;
-}
-
-h1 {
-  color: #f8fafc;
-}
-
-h3 {
-  color: #93c5fd;
-}
-
-a {
-  color: #60a5fa;
+button,
+input {
+  font: inherit;
 }
 
 button {
   cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+.site-nav {
+  display: flex;
+  min-height: 68px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px max(24px, calc((100vw - 1000px) / 2));
+  border-bottom: 1px solid #29263a;
+  background: #14131e;
+}
+
+.site-brand {
+  color: #f5f2ff;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-brand__mark,
+.site-brand > span:last-child {
+  color: #b7f34a;
+}
+
+.site-nav__links,
+.site-nav__account {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.site-nav__links a,
+.site-nav__account a {
+  color: #c4c0d0;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-nav__links a:hover,
+.site-nav__account a:hover {
+  color: #fff;
+}
+
+.site-nav__account .site-nav__signup {
+  padding: 9px 12px;
+  border-radius: 7px;
+  color: #171323;
+  background: #b7f34a;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  color: #f5f2ff;
+}
+
+input {
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 1px solid #3a374a;
+  border-radius: 7px;
+  color: #f5f2ff;
+  background: #171622;
+}
+
+@media (max-width: 760px) {
+  .site-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .site-nav__links,
+  .site-nav__account {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .site-nav {
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .site-nav__links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-nav__links a,
+  .site-nav__account a {
+    font-size: 0.78rem;
+  }
 }
